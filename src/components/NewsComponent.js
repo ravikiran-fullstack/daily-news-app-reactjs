@@ -70,7 +70,7 @@ export class NewsComponent extends Component {
         <div className='container d-flex justify-content-between'>
           <button
             type='button'
-            className='btn btn-primary'
+            className='btn btn-dark'
             onClick={this.handlePreviousClick}
             disabled={this.page <= 1}
           >
@@ -79,7 +79,7 @@ export class NewsComponent extends Component {
 
           <button
             type='button'
-            className='btn btn-primary'
+            className='btn btn-dark'
             onClick={this.handleNextClick}
           >
             &rarr; Next
