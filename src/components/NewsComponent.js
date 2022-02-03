@@ -29,12 +29,14 @@ export class NewsComponent extends Component {
 
   handleNextClick = async () => {
     // this.setState({ page: this.state.page + 1 });
-    this.page = this.page + 1;
-    // console.log("this.state.page ----------- ", this.state.page);
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=d6101e58c3ae430f8f80ccd5ec16f0fc&page=${this.page}&pageSize=20`;
-    let response = await fetch(url);
-    let data = await response.json();
-    this.setState({ articles: data.articles });
+    if (!(this.page + 1 > Math.ceil(this.state.totalArticles / 20))) {
+      this.page = this.page + 1;
+      // console.log("this.state.page ----------- ", this.state.page);
+      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=d6101e58c3ae430f8f80ccd5ec16f0fc&page=${this.page}&pageSize=20`;
+      let response = await fetch(url);
+      let data = await response.json();
+      this.setState({ articles: data.articles });
+    }
   };
 
   handlePreviousClick = async () => {
