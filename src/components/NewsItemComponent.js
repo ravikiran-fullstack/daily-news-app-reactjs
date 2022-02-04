@@ -9,8 +9,8 @@ export class NewsItemComponent extends Component {
       <div className='my-3'>
         <div className='card'>
           <span
-            class='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger'
-            style={{ left: "94% !important", zIndex: "1" }}
+            className='position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger'
+            style={{ left: "92% !important", zIndex: "1" }}
           >
             {source}
           </span>
@@ -19,7 +19,7 @@ export class NewsItemComponent extends Component {
             <h5 className='card-title titleText'>{title}</h5>
             <p className='card-text descriptionText'>{description}</p>
             <p className='card-text'>
-              <small class='text-muted'>
+              <small className='text-muted'>
                 By {author ? author : "Unknown"} on{" "}
                 {new Date(date).toGMTString()}
               </small>
