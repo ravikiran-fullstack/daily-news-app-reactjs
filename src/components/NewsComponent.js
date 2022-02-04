@@ -22,14 +22,19 @@ export class NewsComponent extends Component {
       page: 1,
       totalArticles: 0,
     };
+    document.title = `${this.capitalize(this.props.category)} - News App`;
   }
+
+  capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
 
   updateNews = async () => {
     let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=d6101e58c3ae430f8f80ccd5ec16f0fc&page=${this.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let response = await fetch(url);
     let data = await response.json();
-    console.log(data);
+    // console.log(data);
     this.setState({
       articles: data.articles,
       totalArticles: data.totalResults,
@@ -88,7 +93,9 @@ export class NewsComponent extends Component {
     console.log("render");
     return (
       <div className='container my-3'>
-        <h1 className='text-center'>Todays News</h1>
+        <h1 className='text-center'>
+          Todays News - {this.capitalize(this.props.category)}
+        </h1>
         {this.state.loading && <SpinnerComponent></SpinnerComponent>}
         {!this.state.loading && (
           <div className='row'>
