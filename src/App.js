@@ -17,7 +17,7 @@ export default class App extends Component {
             <Route path='/' exact>
               <NewsComponent
                 key='general'
-                pageSize={5}
+                pageSize={6}
                 country='in'
                 category='general'
               ></NewsComponent>
@@ -25,7 +25,7 @@ export default class App extends Component {
             <Route path='/business' exact>
               <NewsComponent
                 key='business'
-                pageSize={5}
+                pageSize={6}
                 country='in'
                 category='business'
               ></NewsComponent>
@@ -33,7 +33,7 @@ export default class App extends Component {
             <Route path='/entertainment' exact>
               <NewsComponent
                 key='entertainment'
-                pageSize={5}
+                pageSize={6}
                 country='in'
                 category='entertainment'
               ></NewsComponent>
