@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import NavBar from "./components/NavBar";
 import NewsComponent from "./components/NewsComponent";
 
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import LoadingBar from "react-top-loading-bar";
 

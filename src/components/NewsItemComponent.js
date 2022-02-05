@@ -1,4 +1,3 @@
-import { getByTitle } from "@testing-library/react";
 import React, { Component } from "react";
 
 export class NewsItemComponent extends Component {
