@@ -14,7 +14,14 @@ export default class App extends Component {
       progress: 0,
     };
   }
+
+  apiKey = process.env.REACT_APP_NEWS_API;
+
   setProgress = (progress) => {
+    console.log(
+      "process.env.REACT_APP_NEWS_API",
+      process.env.REACT_APP_NEWS_API
+    );
     this.setState({ progress: progress });
   };
   render() {
@@ -27,6 +34,7 @@ export default class App extends Component {
             <Route path='/' exact>
               <NewsComponent
                 setProgress={this.setProgress}
+                apiKey={this.apiKey}
                 key='general'
                 pageSize={6}
                 country='in'
@@ -36,6 +44,7 @@ export default class App extends Component {
             <Route path='/business' exact>
               <NewsComponent
                 setProgress={this.setProgress}
+                apiKey={this.apiKey}
                 key='business'
                 pageSize={6}
                 country='in'
@@ -45,6 +54,7 @@ export default class App extends Component {
             <Route path='/entertainment' exact>
               <NewsComponent
                 setProgress={this.setProgress}
+                apiKey={this.apiKey}
                 key='entertainment'
                 pageSize={6}
                 country='in'
@@ -54,6 +64,7 @@ export default class App extends Component {
             <Route path='/health' exact>
               <NewsComponent
                 setProgress={this.setProgress}
+                apiKey={this.apiKey}
                 key='health'
                 pageSize={5}
                 country='in'
@@ -63,6 +74,7 @@ export default class App extends Component {
             <Route path='/science' exact>
               <NewsComponent
                 setProgress={this.setProgress}
+                apiKey={this.apiKey}
                 key='science'
                 pageSize={5}
                 country='in'
@@ -72,6 +84,7 @@ export default class App extends Component {
             <Route path='/sports' exact>
               <NewsComponent
                 setProgress={this.setProgress}
+                apiKey={this.apiKey}
                 key='sports'
                 pageSize={5}
                 country='in'
@@ -81,6 +94,7 @@ export default class App extends Component {
             <Route path='/technology' exact>
               <NewsComponent
                 setProgress={this.setProgress}
+                apiKey={this.apiKey}
                 key='technology'
                 pageSize={5}
                 country='in'

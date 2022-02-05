@@ -32,7 +32,7 @@ export class NewsComponent extends Component {
 
   updateNews = async () => {
     this.props.setProgress(10);
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=d6101e58c3ae430f8f80ccd5ec16f0fc&page=${this.page}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let response = await fetch(url);
     this.props.setProgress(30);
@@ -96,7 +96,7 @@ export class NewsComponent extends Component {
 
   fetchMoreData = async () => {
     this.page = this.page + 1;
-    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=d6101e58c3ae430f8f80ccd5ec16f0fc&page=${this.page}&pageSize=${this.props.pageSize}`;
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=${this.props.apiKey}&page=${this.page}&pageSize=${this.props.pageSize}`;
     this.setState({ loading: true });
     let response = await fetch(url);
     let data = await response.json();
