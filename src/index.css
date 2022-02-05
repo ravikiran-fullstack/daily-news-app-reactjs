@@ -19,3 +19,10 @@
   line-clamp: 2;
   -webkit-box-orient: vertical;
 }
+
+.badgeStyle {
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+}
